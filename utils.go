@@ -62,7 +62,8 @@ func replaceAllDirty(path string) string {
 	minusColon := strings.ReplaceAll(minusExcl, ":", "")
 	minusUp := strings.ReplaceAll(minusColon, "^", "")
 	minusStar := strings.ReplaceAll(minusUp, "*", "")
-	return minusStar
+	minusDots := strings.ReplaceAll(minusStar, "..", "")
+	return minusDots
 }
 
 func contains(s []string, str string) bool {
@@ -73,4 +74,15 @@ func contains(s []string, str string) bool {
 	}
 
 	return false
+}
+
+func handleErr(err error) map[string]interface{} {
+	if err != nil {
+		log.Printf("exec failed: %s", err)
+		return map[string]interface{}{
+			"err": err,
+		}
+	}
+
+	return nil
 }
