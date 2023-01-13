@@ -57,8 +57,6 @@ ORDER BY ? LIMIT ? OFFSET ?
 ```
 id: @*id
 ```
-The @ signifies that there will be a parameter labeled id that will be passed when executing sql statement
-
 ```sql
 select id from tbl where id LIKE ? [@id]
 ```
@@ -73,7 +71,7 @@ the query remains unchanged, it will not be parameterized can be seen below
 select count(id) from tbl where members_id = members.id
 ```
 
-#### [^] column as query
+#### [^] query as column
 
 ```
 ^posts_count
