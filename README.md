@@ -1,8 +1,11 @@
 # gjsonql
 
+[GJSON](https://github.com/tidwall/gjson) inspired library for querying sql dbs using JSON
+
 #### STATUS
 ```
 v0.0.1 == unstable
+only supports sqlite DB
 ```
 
 #### CREATE
